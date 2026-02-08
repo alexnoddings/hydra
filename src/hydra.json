@@ -1,0 +1,12 @@
+{
+  "admin": {
+    "": "https://localhost:5000/"
+  },
+  "dev": {
+    "": "https://localhost:5050/",
+    "dashboard": "https://localhost:5050/dev/dashboard"
+  },
+  "user": {
+    "": "https://localhost:5000/"
+  }
+}
