@@ -1,3 +1,5 @@
+![](hydra.svg)
+
 # hydra
 
 hydra is a tiny personal utility for redirecting web requests.
