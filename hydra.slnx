@@ -1,8 +1,0 @@
-<Solution>
-  <Folder Name="/solution/">
-    <File Path=".gitignore" />
-    <File Path="README.md" />
-  </Folder>
-  <Project Path="src/hydra.csproj" />
-  <Project Path="tests/tests.csproj" />
-</Solution>

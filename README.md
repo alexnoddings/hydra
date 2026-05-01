@@ -21,21 +21,8 @@ hydra relies on modern browsers automatically mapping `*.localhost` to `localhos
 
 ## Config
 
-hydra is configured via a `hydra.json` file in the process's working directory.
-
-See the example [`hydra.json`](src/hydra.json).
-
-You can change what port hydra binds to via `appsettings.json`'s Kestrel settings.
+TBA
 
 ## Building
 
-The app can be published via `dotnet publish --configuration Release --runtime {runtime-identifier}`.
-
-A
-[single-file](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview), 
-[AoT](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/), 
-[R2R](https://learn.microsoft.com/en-us/dotnet/core/deploying/ready-to-run),
-platform-native 
-executable artefact will be published to `bin\Release\net10.0\{runtime}\publish`. 
-
-See the [.NET RID Catalogue](https://learn.microsoft.com/en-us/dotnet/core/rid-catalog) for runtime identifiers.
+TBA
