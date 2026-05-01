@@ -20,6 +20,4 @@ async fn main() {
     axum::serve(listener, router)
         .await
         .expect("Error running server");
-
-    println!("Application is shutting down...");
 }

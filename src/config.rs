@@ -10,6 +10,15 @@ pub struct Config {
     pub hosts: HashMap<String, HashMap<String, String>>,
 }
 
+impl Config {
+    pub fn get_target(&self, host: &str, path: &str) -> Option<&str> {
+        self.hosts
+            .get(host)
+            .and_then(|h| h.get(path))
+            .map(String::as_str)
+    }
+}
+
 impl Default for Config {
     fn default() -> Self {
         Config {
