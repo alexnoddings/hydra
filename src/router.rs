@@ -22,6 +22,15 @@ async fn handler(
     let Some(host) = headers.get("host").and_then(|h| h.to_str().ok()) else {
         return StatusCode::BAD_REQUEST.into_response();
     };
+    let host = trim_host(host);
 
     format!("slug: {slug}, cfg bind: {addr}, host: {host}").into_response()
+}
+
+fn trim_host(host: &str) -> &str {
+    // Lop the port off of the host, leaving the rest
+    match host.rfind(':') {
+        Some(i) => &host[..i],
+        None => host,
+    }
 }

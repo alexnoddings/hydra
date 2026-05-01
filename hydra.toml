@@ -1,11 +1,11 @@
 address = 'localhost:8088'
 
-[hosts.admin]
+[hosts."admin.localhost"]
 "" = "https://localhost:5000/"
 
-[hosts.dev]
+[hosts."dev.localhost"]
 "" = "https://localhost:5050/"
 "dashboard" = "https://localhost:5050/dev/dashboard"
 
-[hosts.user]
+[hosts."user.localhost"]
 "" = "https://localhost:5000/"
