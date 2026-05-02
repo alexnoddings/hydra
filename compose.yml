@@ -1,0 +1,14 @@
+services:
+  hydra:
+    container_name: hydra
+    image: hydra
+    # Left is the host port
+    # Right is container port, which should match 'address' in hydra.toml
+    ports:
+      - "8080:8080"
+    volumes:
+      # Left is the host path
+      # Right is the container path, this shouldn't change
+      - ./hydra.toml:/app/hydra.toml:ro
+    # Automatically start on docker start
+    restart: unless-stopped

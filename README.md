@@ -34,3 +34,31 @@ cargo run
 # outputs to ./target/release/hydra[.exe]
 cargo build --release
 ```
+
+## Running with Docker
+
+### Prerequisites
+
+Requires [Docker](https://docs.docker.com/get-docker/) with the Compose plugin,
+or [Podman](https://podman.io/docs/installation) with [podman-compose](https://github.com/containers/podman-compose)
+
+### Quick start
+
+1. Copy `hydra.toml` somewhere, eg `~/.hydra/hydra.toml`
+    - Configure `address = "0.0.0.0:{port}"`
+2. Build the image
+   ```bash
+   docker build -t hydra .
+   ```
+3. Copy `compose.yml` somewhere, eg `~/.hydra/compose.yml`
+    - Configure the config volume path for the host if it isn't stored in the same folder
+4. Run compose to start the app
+   ```bash
+   docker compose up -d
+   # or
+   podman compose
+   ```
+
+### Auto-start
+
+The default `compose.yml` uses `restart: unless-stopped`, meaning hydra will start whenever Docker/Podman start.
