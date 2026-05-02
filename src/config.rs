@@ -35,9 +35,13 @@ fn address_default() -> String {
 pub async fn load_config() -> Config {
     let cfg_str = tokio::fs::read_to_string("hydra.toml").await;
     match cfg_str {
-        Ok(cfg) => toml::from_str::<Config>(&cfg).unwrap_or_default(),
+        Ok(cfg) => parse_config(&cfg),
         Err(_) => Config::default(),
     }
+}
+
+pub fn parse_config(cfg: &str) -> Config {
+    toml::from_str::<Config>(&cfg).unwrap_or_default()
 }
 
 #[cfg(test)]
@@ -56,7 +60,7 @@ mod tests {
     "#;
 
     fn make_test_config() -> Config {
-        toml::from_str::<Config>(TOML).unwrap_or_default()
+        parse_config(TOML)
     }
 
     #[test]
