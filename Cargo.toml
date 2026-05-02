@@ -8,3 +8,6 @@ axum = "0.8.9"
 serde = { version = "1.0.228", features = ["derive"] }
 tokio = { version = "1.52.1", features = ["fs", "rt", "rt-multi-thread", "macros", "signal"] }
 toml = "1.1.2"
+
+[dev-dependencies]
+tower = "0.5.3"
